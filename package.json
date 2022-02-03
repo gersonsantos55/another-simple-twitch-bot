@@ -1,0 +1,18 @@
+{
+  "type": "commonjs",
+  "name": "another-simple-twitch-bot",
+  "version": "1.0.0",
+  "description": "This is a simple twitch bot, nothing special",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^15.0.1",
+    "tmi.js": "^1.5.0"
+  }
+}
