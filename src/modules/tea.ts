@@ -1,5 +1,5 @@
-const { milliliters } = require("./random");
-const { hasCommand } = require("./util");
+import { milliliters } from "./random";
+import { hasCommand } from "./util";
 
 const teaList = [
   "branco",
@@ -33,11 +33,7 @@ const teaList = [
   "de sálvia",
 ];
 
-
-/**
- * @param {string} username
- */
-function getTeaMessage(username) {
+export function getTeaMessage(username: string): string {
   const tea = teaList[Math.floor(Math.random() * teaList.length)];
 
   const size = milliliters();
@@ -46,24 +42,22 @@ function getTeaMessage(username) {
 
   if (size === 50) {
     return `${message} BibleThump`;
-  } else if (size > 50 && size <= 250) {
-    return `${message} MiniK`;
-  } else if (size > 250 && size <= 500) {
-    return `${message} Kappa`;
-  } else if (size > 500 && size <= 750) {
-    return `${message} KappaHD`;
-  } else if (size > 750 && size < 1000) {
-    return `${message} HolidayCookie`;
-  } else {
-    return `${message} KappaPride`;
   }
+  if (size <= 250) {
+    return `${message} MiniK`;
+  }
+  if (size <= 500) {
+    return `${message} Kappa`;
+  }
+  if (size <= 750) {
+    return `${message} KappaHD`;
+  }
+  if (size < 1000) {
+    return `${message} HolidayCookie`;
+  }
+  return `${message} KappaPride`;
 }
 
-/**
- * @param {string} message
- */
-function hasTeaCommand(message) {
+export function hasTeaCommand(message: string): boolean {
   return hasCommand(message.toLowerCase(), ["cha", "chá", "chà"]);
 }
-
-module.exports = Object.freeze({ getTeaMessage, hasTeaCommand });

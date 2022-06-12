@@ -1,8 +1,4 @@
-/**
- * @param {string} message
- * @param {string[]} commandNames
- */
-function hasCommand(message, commandNames) {
+export function hasCommand(message: string, commandNames: string[]): boolean {
   if (!!commandNames.length) {
     for (let i = 0; i < commandNames.length; i++) {
       const commandName = commandNames[i];
@@ -21,5 +17,3 @@ function hasCommand(message, commandNames) {
   }
   return false;
 }
-
-module.exports = Object.freeze({ hasCommand });
