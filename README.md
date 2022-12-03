@@ -20,4 +20,4 @@ The events that this code handles include:
     - `cheer`
     - `chat`
 
-To use this code, the user will need to provide values for the `BOT_USERNAME`, `OAUTH_TOKEN`, and `CHANNEL_NAMES`. On the [src\constants.ts](https://github.com/gersonsantos55/another-simple-twitch-bot/blob/master/src/constants.ts)
+To use this code, the user will need to provide values for the `BOT_USERNAME`, `OAUTH_TOKEN`, and `CHANNEL_NAMES`. On the [src\constants.ts](https://github.com/gersonsantos55/another-simple-twitch-bot/blob/master/src/constants.ts) file.
