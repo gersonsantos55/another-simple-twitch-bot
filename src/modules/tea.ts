@@ -1,4 +1,4 @@
-import { milliliters } from "./random";
+import { randomNumberBetween } from "./random";
 import { hasCommand } from "./util";
 
 const teaList = [
@@ -20,41 +20,35 @@ const teaList = [
   "de erva-doce",
   "de espinheira santa",
   "de eucalipto",
+  "de gengibre",
   "de graviola",
   "de guaco",
   "de hibisco",
   "de hortelã",
-  "de gengibre",
   "de malva",
   "de melissa",
   "de menta",
-  "de sete ervas",
   "de oliveira",
   "de sálvia",
+  "de sete ervas",
 ];
 
 export function getTeaMessage(username: string): string {
+  if (typeof username !== 'string') {
+    return '';
+  }
+
   const tea = teaList[Math.floor(Math.random() * teaList.length)];
 
-  const size = milliliters();
+  const size = randomNumberBetween(50, 1000);
 
   const message = `${username}, você recebeu um chá ${tea} de ${size}ml.`;
 
-  if (size === 50) {
-    return `${message} BibleThump`;
-  }
-  if (size <= 250) {
-    return `${message} MiniK`;
-  }
-  if (size <= 500) {
-    return `${message} Kappa`;
-  }
-  if (size <= 750) {
-    return `${message} KappaHD`;
-  }
-  if (size < 1000) {
-    return `${message} HolidayCookie`;
-  }
+  if (size === 50) return `${message} BibleThump`;
+  if (size <= 250) return `${message} MiniK`
+  if (size <= 500) return `${message} Kappa`;
+  if (size <= 750) return `${message} KappaHD`;
+  if (size < 1000) return `${message} HolidayCookie`;
   return `${message} KappaPride`;
 }
 
