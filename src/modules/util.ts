@@ -1,19 +1,11 @@
 export function hasCommand(message: string, commandNames: string[]): boolean {
-  if (!!commandNames.length) {
-    for (let i = 0; i < commandNames.length; i++) {
-      const commandName = commandNames[i];
-      if (
-        message === commandName ||
-        message.startsWith(`!${commandName} `) ||
-        message.endsWith(` !${commandName}`) ||
-        message.includes(` !${commandName} `) ||
-        message.startsWith(`${commandName} `) ||
-        message.endsWith(` ${commandName}`) ||
-        message.includes(` ${commandName} `)
-      ) {
-        return true;
-      }
-    }
+  if (!Array.isArray(commandNames)) {
+    return false;
   }
-  return false;
+
+  if (!commandNames.every((commandName) => typeof commandName === 'string')) {
+    return false;
+  }
+
+  return new RegExp(`\\b${commandNames.join('|')}\\b`, 'gi').test(message);
 }
