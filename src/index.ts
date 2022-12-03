@@ -2,13 +2,13 @@ import tmi from "tmi.js";
 
 import { BOT_USERNAME, OAUTH_TOKEN, CHANNEL_NAMES } from "./constants";
 import {
+  onChatHandler,
   onCheerHandler,
   onConnectedHandler,
   onDisconnectedHandler,
   onGiftPaidUpgradeHandler,
   onHostedHandler,
   onHostingHandler,
-  onMessageHandler,
   onRaidedHandler,
   onReconnectHandler,
   onResubHandler,
@@ -77,4 +77,4 @@ client.on("raided", onRaidedHandler);
 
 client.on("cheer", onCheerHandler);
 
-client.on("message", onMessageHandler);
+client.on("chat", onChatHandler);

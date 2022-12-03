@@ -123,7 +123,7 @@ export function onCheerHandler(
   );
 }
 
-export function onMessageHandler(
+export function onChatHandler(
   channel: string,
   userstate: tmi.ChatUserstate,
   message: string,
