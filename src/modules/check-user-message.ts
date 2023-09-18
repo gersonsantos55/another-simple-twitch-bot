@@ -2,6 +2,7 @@ import tmi from "tmi.js";
 
 import { client } from "../index"
 import { getTeaMessage, hasTeaCommand } from "./tea";
+import { getUserCustomMessage, userHasCustomMessages } from "./custom-me-commands";
 
 const BOT_USERNAMES: string[] = [];
 
@@ -25,8 +26,15 @@ export function checkUserMessage(
       return;
     }
 
-    message = message.toLowerCase();
-    if (BLOCKED_WORDS.some(word => message.includes(word.toLowerCase()))) {
+    message = message.toLocaleLowerCase();
+    const username = userstate.username.toLocaleLowerCase();
+
+    if (message === '!eu' && userHasCustomMessages(username)) {
+      client.say(channel, `@${userstate.username}, você é: ${getUserCustomMessage(username)}.`);
+      return;
+    }
+
+    if (BLOCKED_WORDS.some(word => message.includes(word.toLocaleLowerCase()))) {
       client.deletemessage(channel, userstate.id);
       client.say(channel, `@${userstate.username}, sorry! You message was deleted because have some forbidden word.`);
     }
