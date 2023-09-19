@@ -3,20 +3,20 @@ This is a simple Typescript project that uses the `tmi.js` library to connect to
 
 The events that this code handles include:
 
-- Connection events: 
+- Connection events:
     - `connected`
     - `disconnected`
     - `reconnect`
-- Subscription events: 
+- Subscription events:
     - `giftpaidupgrade`
     - `resub`
     - `subgift`
     - `subscription`
-- Host and raid events: 
+- Host and raid events:
     - `hosted`
     - `hosting`
     - `raided`
-- Other events: 
+- Other events:
     - `cheer`
     - `chat`
 
