@@ -34,10 +34,6 @@ const teaList = [
 ];
 
 export function getTeaMessage(username: string): string {
-  if (typeof username !== 'string') {
-    return '';
-  }
-
   const tea = teaList[Math.floor(Math.random() * teaList.length)];
 
   const size = randomNumberBetween(50, 1000);
