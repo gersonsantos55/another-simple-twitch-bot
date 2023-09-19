@@ -1,7 +1,7 @@
-import tmi from "tmi.js";
+import tmi from 'tmi.js';
 
-import { client } from "../index"
-import { checkUserMessage } from "./check-user-message";
+import { client } from '../index'
+import { checkUserMessage } from './check-user-message';
 
 
 /********** Connection events **********/

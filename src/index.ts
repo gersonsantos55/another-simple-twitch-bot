@@ -1,6 +1,6 @@
-import tmi from "tmi.js";
+import tmi from 'tmi.js';
 
-import { BOT_USERNAME, OAUTH_TOKEN, CHANNEL_NAMES } from "./constants";
+import { BOT_USERNAME, OAUTH_TOKEN, CHANNEL_NAMES } from './constants';
 import {
   onChatHandler,
   onCheerHandler,
@@ -14,7 +14,7 @@ import {
   onResubHandler,
   onSubGiftHandler,
   onSubscriptionHandler,
-} from "./modules/event-handlers";
+} from './modules/event-handlers';
 
 
 /***********************************************************************/
@@ -49,32 +49,32 @@ client.connect();
 
 /********** Connection events **********/
 
-client.on("connected", onConnectedHandler);
+client.on('connected', onConnectedHandler);
 
-client.on("disconnected", onDisconnectedHandler);
+client.on('disconnected', onDisconnectedHandler);
 
-client.on("reconnect", onReconnectHandler);
+client.on('reconnect', onReconnectHandler);
 
 /********** Subscription events **********/
 
-client.on("giftpaidupgrade", onGiftPaidUpgradeHandler);
+client.on('giftpaidupgrade', onGiftPaidUpgradeHandler);
 
-client.on("resub", onResubHandler);
+client.on('resub', onResubHandler);
 
-client.on("subgift", onSubGiftHandler);
+client.on('subgift', onSubGiftHandler);
 
-client.on("subscription", onSubscriptionHandler);
+client.on('subscription', onSubscriptionHandler);
 
 /********** Host and raid events **********/
 
-client.on("hosted", onHostedHandler);
+client.on('hosted', onHostedHandler);
 
-client.on("hosting", onHostingHandler);
+client.on('hosting', onHostingHandler);
 
-client.on("raided", onRaidedHandler);
+client.on('raided', onRaidedHandler);
 
 /********** Other events **********/
 
-client.on("cheer", onCheerHandler);
+client.on('cheer', onCheerHandler);
 
-client.on("chat", onChatHandler);
+client.on('chat', onChatHandler);

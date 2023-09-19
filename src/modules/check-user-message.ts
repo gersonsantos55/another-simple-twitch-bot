@@ -1,8 +1,8 @@
-import tmi from "tmi.js";
+import tmi from 'tmi.js';
 
-import { client } from "../index"
-import { getTeaMessage, hasTeaCommand } from "./tea";
-import { getUserCustomMessage, userHasCustomMessages } from "./custom-me-commands";
+import { client } from '../index'
+import { getTeaMessage, hasTeaCommand } from './tea';
+import { getUserCustomMessage, userHasCustomMessages } from './custom-me-commands';
 
 const BOT_USERNAMES: string[] = [];
 
